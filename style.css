@@ -1,0 +1,339 @@
+:root {
+    --primary-color: #0d1117;
+    --secondary-color: #f0f6fc;
+    --accent-color: #1f6feb;
+    --card-background: #161b22;
+    --font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: var(--font-family);
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Header e Navegação */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.header a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header a:hover {
+    color: var(--accent-color);
+}
+
+.header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Secções */
+section {
+    padding: 6rem 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Secção Hero */
+.hero-section {
+    position: relative;
+    padding-top: 100px;
+}
+
+.hero-section h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.2;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-section p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #8b949e;
+    margin: 1rem 0 2rem;
+    animation: fadeInUp 1s ease-in-out 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 1s ease-in-out 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.cta-button:hover {
+    background-color: #1456c6;
+    transform: scale(1.05);
+}
+
+/* Secção Projetos */
+.projects-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
+    animation: scaleIn 0.8s ease-in-out;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Secção Sobre */
+.about-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+}
+
+
+/* Secção Contato */
+.contact-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
+}
+
+.contact-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.contact-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.contact-links a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 1rem;
+
+}
+
+/* Footer */
+.footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #2f363d;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .header a {
+        margin: 0 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+/* habilidades */
+
+.skills-section {
+    background-color: var(--card-background);
+}
+
+.skills-section h2 {
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.skills-category {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skills-category:hover {
+    transform: translateY(-5px);
+}
+
+.skills-category h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-category li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
